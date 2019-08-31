@@ -19,5 +19,8 @@
   "homepage": "https://github.com/yabets/pwa#readme",
   "devDependencies": {
     "json-server": "^0.15.0"
+  },
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.2.10"
   }
 }
