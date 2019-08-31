@@ -1,0 +1,19 @@
+{
+  "name": "name-to-gender-pwa",
+  "version": "1.0.0",
+  "description": "a mobile web application that search for name and shows the gender",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yabets/pwa.git"
+  },
+  "author": "yabets belay, aben-bel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yabets/pwa/issues"
+  },
+  "homepage": "https://github.com/yabets/pwa#readme"
+}
