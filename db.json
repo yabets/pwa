@@ -3,19 +3,23 @@
         {
             "name": "Aben",
             "gender": "male",
-            "meaning": "unknown"
+            "meaning": "unknown",
+            "favorite":"true"
         },{
             "name": "Yabe",
             "gender": "male",
-            "meaning": "unknown"
+            "meaning": "unknown",
+            "favorite":"flase"
         }, {
             "name": "Mhret",
             "gender": "female",
-            "meaning": "Mercy"
+            "meaning": "Mercy",
+            "favorite":"true"
         }, {
             "name": "Tsega",
             "gender": "both",
-            "meaning": "grace"
+            "meaning": "grace",
+            "favorite":"flase"
         }
     ]
 }
