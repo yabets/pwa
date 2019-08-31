@@ -9,37 +9,65 @@ favTemplate.innerHTML = `
                 <th>Gender</th>
                 <th></th>
             </tr>
-            <tr>
-                <td data-th="name">Abenezer</td>
-                <td data-th="gender">Male</td>
-                <td data-th="remove-button"><input type="submit" value="remove"/></td>
-            </tr>
-            </tr>
-            <tr>
-                <td data-th="name">Yabets</td>
-                <td data-th="gender">Male</td>
-                <td data-th="remove-button"><input type="submit" value="remove"/></td>
-            </tr>
-            <tr>
-                <td data-th="name">Mhret</td>
-                <td data-th="gender">Female</td>
-                <td data-th="remove-button"><input type="submit" value="remove"/></td>
-            </tr>
+            <slot></slot>
+         
         </table>
     </div>
 
-    <slot></slot> <!-- slotted content appears here -->
-`;
+     <!-- slotted content appears here -->
+     
+`
+
 
 class FavOrite extends HTMLElement {
+    // Can define constructor arguments if you wish.
     constructor() {
         // If you define a constructor, always call super() first!
         // This is specific to CE and required by the spec.
         super();
+        // Setup a click listener on <app-drawer> itself.
+
 
         // Attach a shadow root to the element.
         let shadowRoot = this.attachShadow({mode: 'open'});
-        shadowRoot.appendChild(favTemplate.content.cloneNode(true));
+        shadowRoot.appendChild(nameDisplay.content.cloneNode(true));
+
+        /*
+        var favoriteTable = this.shadowRoot.querySelector('slot');
+        console.log('slot: ',favoriteTable);
+        var tableRow = document.createElement('TR');
+        var tableCell = document.createElement('TD');
+        var removeButton = document.createElement('INPUT');
+        removeButton.value = "Remove";
+        removeButton.type = "Submit";
+        
+        fetch(`/names?favorite=true`).then(function(response) {
+            return response.json();
+        }).then(function(myJson) {
+            return myJson
+        }).then(function(favorites){
+            // adding row to the favorite table
+            console.log('favorites: ',favorites, typeof favorites)
+            favorites.forEach(
+                (data) => {
+                    console.log('data: ',data);
+                    let tableCellClone = tableCell.cloneNode();
+                    let tableRowClone = tableRow.cloneNode();
+
+                    tableCellClone.textContent = data.name
+                    tableRowClone.appendChild(tableCellClone);
+
+                    tableCellClone = tableCell.cloneNode();
+                    tableCellClone.textContent = data.gender
+                    tableRowClone.appendChild(tableCellClone);
+
+                    tableRowClone.appendChild(removeButton.cloneNode())
+
+                    favoriteTable.appendChild(tableRowClone);
+                }
+            );
+        });  
+        */ 
     }
 }
 window.customElements.define('fav-orite', FavOrite);

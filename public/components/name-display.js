@@ -119,7 +119,7 @@ class NameDisplay extends HTMLElement {
                 })
                 .then(function(myJson) {
                     console.log(JSON.stringify(myJson));
-    
+                    NameDisplay.gender = (JSON.stringify(myJson).gender);
                 });
           });
     }
