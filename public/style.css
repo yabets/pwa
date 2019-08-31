@@ -1,8 +1,20 @@
-
-
 body {
     margin:10px;
     background: lightgrey;
+}
+/* for index.html page */
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav li a {
+  display: block;
+  width: 60px;
+}
+nav ul li {
+  float: left;
 }
 
 /* for login page */
@@ -108,7 +120,7 @@ body {
 }
 .favorite-table{
     width:340px;
-    height:300px;
+    height:100%;
     padding: 30px 0;
     background:#34495E;
     color: #fff;
@@ -124,7 +136,7 @@ body {
     text-align: center
 }
 .favorite-table th, td {
-    margin: .5em 1em;
+    margin: .5em .5em;
 }
 .favorite-table th, td:before {
     color: #dd5;
