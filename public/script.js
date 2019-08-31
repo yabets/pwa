@@ -56,13 +56,14 @@
         xhr.send();
     }
 
-    
-    loadJSON('http://localhost:3000/names',
-         function(data) { 
-            return displayData(data);
-          },
-         function(xhr) { console.error(xhr); }
-    );
+
+    fetch('http://localhost:3000/names')
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(myJson) {
+        return displayData(JSON.stringify(myJson))
+    });
 
 
 }());
