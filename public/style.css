@@ -1,12 +1,16 @@
+
+
+body {
+    background: lightgrey;
+}
+
+/* for login page */
 .login-card {
     width:340px;
     height:300px;
     margin:50px;
     padding: 30px;
     background:lightgoldenrodyellow;
-}
-body {
-    background: lightgrey;
 }
 
 .login-card {
@@ -97,4 +101,44 @@ body {
     opacity: 1;
   }
 
+  /* for favorite page */
+.favorite-box{
+    margin-left:40%;
+}
+.favorite-table{
+    width:340px;
+    height:300px;
+    padding: 30px 0;
+    background:#34495E;
+    color: #fff;
+    border-radius: .4em;
+    overflow: hidden;
+}
+.favorite-table tr {
+    border-color: white;
 
+}
+.favorite-table td{
+    padding:10px;
+    text-align: center
+}
+.favorite-table th, td {
+    margin: .5em 1em;
+}
+.favorite-table th, td:before {
+    color: #dd5;
+}
+.favorite-table input[type="submit"]{
+    border: 0px;
+    color: #fff;
+    text-shadow: 0 1px rgba(0,0,0,0.1); 
+    background-color: #4d90fe;
+    width: 80%;
+    height: 100%;
+}
+.favorite-table input[type="submit"]:hover{
+    border: 0px;
+    text-shadow: 0 1px rgba(0,0,0,0.3);
+    background-color: #357ae8;
+    
+}
