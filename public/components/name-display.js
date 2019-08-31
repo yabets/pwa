@@ -35,6 +35,11 @@ let nameDisplay = document.createElement('template');
                 float: right;
             }
         </style> 
+        <h1>Welcome</h1>
+        <form>
+            <input type="text" name="name" placeholder="Search for name . . .">
+            <input type="button" name="submit" value="Search">
+        </form>
         <div class="box">
             <div class="col-70 left">
                 <div class="row">

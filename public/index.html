@@ -6,24 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Search for name and get the corsponding gender">
     <link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link ref="stylesheet" href="style.css">
 </head>
 <body>
   <nav>
     <ul>
-      <li>Favorites</li>
-      <li>Login</li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#favorites">Favorites</a></li>
+      <li><a href="#login">Login</a></li>
     </ul>
   </nav>
-  <h1>Welcome</h1>
-  <form>
-    <input type="text" name="name" placeholder="Search for name . . .">
-    <input type="button" name="submit" value="Search">
-  </form>
-
-  <!-- Use the custom element on the page. -->
-  <name-display disabled name="abeni" gender="male"></name-display>
+  <main>
+    <!--content is populated by router.js-->
+    <name-display></name-display><!--default-->
+  </main>
   <script src="components/name-display.js"></script>
-
+  <script src="components/fav-orite.js"></script>
+  <script src="components/log-in.js"></script>
+  <script src="script.js"></script>
+  <script src="router.js"></script>
   <!-- 
         the following part is commented out because import is 
         conflicting with json-server once we stop using json-server
