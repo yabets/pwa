@@ -4,7 +4,8 @@
   "description": "a mobile web application that search for name and shows the gender",
   "main": "index.html",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "json-server --watch db.json"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/yabets/pwa/issues"
   },
-  "homepage": "https://github.com/yabets/pwa#readme"
+  "homepage": "https://github.com/yabets/pwa#readme",
+  "devDependencies": {
+    "json-server": "^0.15.0"
+  }
 }
