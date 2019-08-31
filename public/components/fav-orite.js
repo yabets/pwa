@@ -13,11 +13,7 @@ favTemplate.innerHTML = `
          
         </table>
     </div>
-
-     <!-- slotted content appears here -->
-     
-`
-
+`;
 
 class FavOrite extends HTMLElement {
     // Can define constructor arguments if you wish.
@@ -30,11 +26,10 @@ class FavOrite extends HTMLElement {
 
         // Attach a shadow root to the element.
         let shadowRoot = this.attachShadow({mode: 'open'});
-        shadowRoot.appendChild(nameDisplay.content.cloneNode(true));
+        shadowRoot.appendChild(favTemplate.content.cloneNode(true));
 
-        /*
-        var favoriteTable = this.shadowRoot.querySelector('slot');
-        console.log('slot: ',favoriteTable);
+        
+        var favoriteTable = this.shadowRoot.querySelector('.favorite-table');
         var tableRow = document.createElement('TR');
         var tableCell = document.createElement('TD');
         var removeButton = document.createElement('INPUT');
@@ -47,7 +42,6 @@ class FavOrite extends HTMLElement {
             return myJson
         }).then(function(favorites){
             // adding row to the favorite table
-            console.log('favorites: ',favorites, typeof favorites)
             favorites.forEach(
                 (data) => {
                     console.log('data: ',data);
@@ -67,7 +61,6 @@ class FavOrite extends HTMLElement {
                 }
             );
         });  
-        */ 
     }
 }
 window.customElements.define('fav-orite', FavOrite);
