@@ -20,6 +20,26 @@
             "gender": "both",
             "meaning": "grace",
             "favorite":"flase"
+        }, {
+            "name": "Kebede",
+            "gender": "both",
+            "meaning": "grace",
+            "favorite":"flase"
+        }, {
+            "name": "Abebe",
+            "gender": "both",
+            "meaning": "grace",
+            "favorite":"flase"
+        }, {
+            "name": "Lina",
+            "gender": "both",
+            "meaning": "grace",
+            "favorite":"true"
+        }, {
+            "name": "Mahlet",
+            "gender": "both",
+            "meaning": "grace",
+            "favorite":"true"
         }
     ]
 }
