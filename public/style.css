@@ -1,30 +1,103 @@
 body {
-    margin:10px;
+    margin:0;
     background: lightgrey;
 }
 /* for index.html page */
-
+nav {
+  width: 90%;
+  margin: auto;
+}
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #333;
 }
-nav li a {
-  display: block;
-  width: 60px;
-}
+
 nav ul li {
   float: left;
 }
 
-/* for login page */
-.login-card {
-    width:340px;
-    height:300px;
-    margin:50px;
-    padding: 30px;
-    background:lightgoldenrodyellow;
+nav ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
+
+nav ul li a:hover:not(.active) {
+  background-color: #111;
+}
+
+nav {
+  display:block;
+}
+
+.active {
+  background:brown;
+}
+
+/* for name display */
+
+.welcome-box {
+  padding: 40px;
+  width: 80%;
+  background-color: #F7F7F7;
+  margin: 0 auto;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+.welcome-box input[name="name"]{
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: 1px grey solid;
+
+}
+.welcome-box input[name="submit"]{
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.box {
+   border: black solid 1px;
+   border-radius: 5px;
+   width: 250px;
+   padding: 10px;
+   margin: 10px;
+   height: 2.5em;
+}
+.col-70 {
+   width: 70%;
+}
+.col-30 {
+   widht: 30%;
+}
+.row {
+}
+.label {
+   font-weight: bold;
+   font-size: 1em;
+}
+.value {
+   font-size: 1em;
+}
+.icon {
+   font-size: 2em;
+}
+.left {
+   float: left;
+}
+.right {
+   float: right;
+}
+
+/* for login page */
 
 .login-card {
     padding: 40px;
@@ -116,42 +189,55 @@ nav ul li {
 
   /* for favorite page */
 .favorite-box{
-    margin-left:40%;
+    padding: 10px;
+    width: 85%;
+    background-color: #F7F7F7;
+    margin: 0 auto;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+.favorite-box h1{
+  text-align: center;
 }
 .favorite-table{
-    width:340px;
+    width:300px;
     height:100%;
+    margin:auto;
     padding: 30px 0;
     background:#34495E;
     color: #fff;
     border-radius: .4em;
-    overflow: hidden;
+    border-collapse: collapse;
 }
 .favorite-table tr {
     border-color: white;
-
 }
 .favorite-table td{
-    padding:10px;
-    text-align: center
+    padding:10px 5px;
+    text-align: center;
+    align-items: center;
+    border-bottom: 1px solid white;
 }
 .favorite-table th, td {
-    margin: .5em .5em;
+    margin: .2em .2em;
 }
-.favorite-table th, td:before {
+.favorite-table thead td{
     color: #dd5;
 }
 .favorite-table input[type="submit"]{
     border: 0px;
     color: #fff;
     text-shadow: 0 1px rgba(0,0,0,0.1); 
-    background-color: #4d90fe;
-    width: 80%;
+    background-color:#357ae8;
+    width: 100%;
     height: 100%;
+    border-radius:6px;
+    border-bottom: solid 1px white;
+
 }
 .favorite-table input[type="submit"]:hover{
     border: 0px;
     text-shadow: 0 1px rgba(0,0,0,0.3);
-    background-color: #357ae8;
+    background-color:#4d90fe;
     
 }

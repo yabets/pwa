@@ -4,11 +4,11 @@ favTemplate.innerHTML = `
     <div class="favorite-box">
         <h1>Favorite Names</h1>
         <table class="favorite-table">
-            <tr>
-                <th>Name</th>
-                <th>Gender</th>
-                <th></th>
-            </tr>
+            <thead>
+                <td>Name</td>
+                <td>Gender</td>
+                <td></td>
+            </thead>
             <slot></slot>
          
         </table>
@@ -44,7 +44,6 @@ class FavOrite extends HTMLElement {
             // adding row to the favorite table
             favorites.forEach(
                 (data) => {
-                    console.log('data: ',data);
                     let tableCellClone = tableCell.cloneNode();
                     let tableRowClone = tableRow.cloneNode();
 

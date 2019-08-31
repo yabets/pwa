@@ -1,61 +1,37 @@
 let nameDisplay = document.createElement('template');
     nameDisplay.innerHTML = `
         <style>
-            :host {  }
-            .box {
-                border: black solid 1px;
-                border-radius: 5px;
-                width: 250px;
-                padding: 10px;
-                margin: 10px;
-                height: 2.5em;
-            }
-            .col-70 {
-                width: 70%;
-            }
-            .col-30 {
-                widht: 30%;
-            }
-            .row {
-            }
-            .label {
-                font-weight: bold;
-                font-size: 1em;
-            }
-            .value {
-                font-size: 1em;
-            }
-            .icon {
-                font-size: 2em;
-            }
-            .left {
-                float: left;
-            }
-            .right {
-                float: right;
-            }
+            @import"style.css"
         </style> 
-        <h1>Welcome</h1>
-        <form>
-            <input type="text" id="search" name="name" placeholder="Search for name . . .">
-            <input type="button" name="submit" value="Search" id="searchBtn">
-        </form>
-        <div class="box">
-            <div class="col-70 left">
-                <div class="row">
-                    <span class="label">Name</span>
-                    <span class="value">Abeni</span>
+        <div class="welcome-box">
+            <br/>
+            <h1>Welcome</h1>
+            <form>
+                <input type="text" id="search" name="name" placeholder="Search for name . . .">
+                <input type="button" name="submit" value="Search" id="searchBtn">
+            </form>
+            <div class="box">
+                <div class="col-70 left">
+                    <div class="row">
+                        <span class="label">Name</span>
+                        <span class="value">Abeni</span>
+                    </div>
+                    <div class="row">
+                        <span class="label">Gender</span>
+                        <span class="value">Male</span>
+                    </div>
                 </div>
-                <div class="row">
-                    <span class="label">Gender</span>
-                    <span class="value">Male</span>
+                <div class="col-30 right">
+                    <span class="icon">
+                        <i class="fa fa-male" aria-hidden="true"></i>
+                        male
+                    </span>
                 </div>
-            </div>
-            <div class="col-30 right">
-                <span class="icon">
-                    <i class="fa fa-male" aria-hidden="true"></i>
-                    male
-                </span>
+                <div class="fav">
+                    <span>
+                        <i class="far fa-star"></i>
+                    </span>
+                </div>
             </div>
         </div>
         <slot></slot> <!-- slotted content appears here -->

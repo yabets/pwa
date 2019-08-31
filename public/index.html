@@ -7,20 +7,21 @@
     <meta name="description" content="Search for name and get the corsponding gender">
     <link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
     <link ref="stylesheet" href="./style.css">
+    <link href="lib/font-awesome-4.7.0/css/fontawesome.css" rel="stylesheet">
+    <link href="lib/font-awesome-4.7.0/css/brands.css" rel="stylesheet">
+    <link href="lib/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#favorites">Favorites</a></li>
-      <li><a href="#login">Login</a></li>
-    </ul>
-  </nav>
+
+  <nav-bar></nav-bar>
+
   <main>
     <!--content is populated by router.js-->
+    
     <name-display></name-display><!--default-->
   </main>
   <script src="router.js"></script>
+  <script src="components/nav-bar.js"></script>
   <script src="components/name-display.js"></script>
   <script src="components/fav-orite.js"></script>
   <script src="components/log-in.js"></script>
