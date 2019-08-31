@@ -37,8 +37,8 @@ let nameDisplay = document.createElement('template');
         </style> 
         <h1>Welcome</h1>
         <form>
-            <input type="text" name="name" placeholder="Search for name . . .">
-            <input type="button" name="submit" value="Search">
+            <input type="text" id="search" name="name" placeholder="Search for name . . .">
+            <input type="button" name="submit" value="Search" id="searchBtn">
         </form>
         <div class="box">
             <div class="col-70 left">
@@ -91,6 +91,9 @@ class NameDisplay extends HTMLElement {
         }
     }
 
+    
+    
+
     // Can define constructor arguments if you wish.
     constructor() {
         // If you define a constructor, always call super() first!
@@ -105,8 +108,21 @@ class NameDisplay extends HTMLElement {
         // Attach a shadow root to the element.
         let shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.appendChild(nameDisplay.content.cloneNode(true));
-    }
 
+        shadowRoot.querySelector('#searchBtn').addEventListener('click', e => {
+            console.log('search clicked');
+            console.log(e);
+            let q = this.shadowRoot.querySelector('#search').value;
+            fetch(`/names?name=${q}`)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(myJson) {
+                    console.log(JSON.stringify(myJson));
+    
+                });
+          });
+    }
     
 }
 window.customElements.define('name-display', NameDisplay);
