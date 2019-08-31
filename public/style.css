@@ -2,6 +2,20 @@ body {
     margin:10px;
     background: lightgrey;
 }
+/* for index.html page */
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav li a {
+  display: block;
+  width: 60px;
+}
+nav ul li {
+  float: left;
+}
 
 /* for login page */
 .login-card {
