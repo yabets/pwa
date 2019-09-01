@@ -10,6 +10,31 @@ navTemplate.innerHTML = `
     </nav>
 `
 class NavBar extends HTMLElement {
+    // A getter/setter for a active property.
+    get active() {
+        return this.getAttribute('active');
+    }
+
+    set active(newValue) {
+        this.setAttribute('active', newValue);
+    }
+
+    static get observedAttributes() {
+        return ['active'];
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        if(oldValue && newValue){
+            this.changeActive(oldValue, newValue);
+        }
+    }
+
+    changeActive = (from, to) => {
+        this.shadowRoot.querySelector(`a[href='${from}']`).classList.toggle("active");
+        this.shadowRoot.querySelector(`a[href='${to}']`).classList.toggle("active");
+            
+    }
+
     constructor() {
         super();
 
