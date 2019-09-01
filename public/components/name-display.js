@@ -1,3 +1,5 @@
+import { isFav, add } from "../database/db";
+
 let nameDisplay = document.createElement('template');
     nameDisplay.innerHTML = `
         <link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
