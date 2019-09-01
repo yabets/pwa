@@ -1,4 +1,4 @@
-import { isFav, add } from "../database/db";
+import { isFav, add } from "../database/db.js";
 
 let nameDisplay = document.createElement('template');
     nameDisplay.innerHTML = `

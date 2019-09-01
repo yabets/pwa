@@ -241,3 +241,12 @@ nav {
     background-color:#4d90fe;
     
 }
+
+/* styling search result */
+.fav {
+  color:grey;
+  float:right;
+  margin-left:12px;
+  margin-top: 8px;
+  font-size: 22px;
+}
