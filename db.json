@@ -14,15 +14,15 @@
             "meaning": "Mercy"
         }, {
             "name": "Tsega",
-            "gender": "both",
+            "gender": "unisex",
             "meaning": "grace"
         }, {
             "name": "Kebede",
-            "gender": "both",
+            "gender": "unisex",
             "meaning": "grace"
         }, {
             "name": "Abebe",
-            "gender": "both",
+            "gender": "unisex",
             "meaning": "grace"
         }, {
             "name": "Lina",
@@ -30,7 +30,7 @@
             "meaning": "grace"
         }, {
             "name": "Mahlet",
-            "gender": "both",
+            "gender": "unisex",
             "meaning": "grace"
         }
     ],
@@ -45,11 +45,11 @@
             "meaning": "Mercy"
         }, {
             "name": "Lina",
-            "gender": "both",
+            "gender": "female",
             "meaning": "grace"
         }, {
             "name": "Mahlet",
-            "gender": "both",
+            "gender": "unisex",
             "meaning": "grace"
         }
     ]
