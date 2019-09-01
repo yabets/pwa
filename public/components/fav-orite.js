@@ -47,6 +47,7 @@ class FavOrite extends HTMLElement {
                 (data) => {
                     let tableCellClone = tableCell.cloneNode();
                     let tableRowClone = tableRow.cloneNode();
+                    let removeButtonClone = removeButton.cloneNode();
 
                     tableCellClone.textContent = data.name
                     tableRowClone.appendChild(tableCellClone);
@@ -55,7 +56,10 @@ class FavOrite extends HTMLElement {
                     tableCellClone.textContent = data.gender
                     tableRowClone.appendChild(tableCellClone);
 
-                    tableRowClone.appendChild(removeButton.cloneNode())
+                    removeButtonClone.addEventListener("click", (event)=>{
+                        console.log("Remove from favorite clicked...\nName to be removed: ", event.srcElement.parentElement.cells[0].innerHTML);
+                    });
+                    tableRowClone.appendChild(removeButtonClone)
 
                     favoriteTable.appendChild(tableRowClone);
                 }
