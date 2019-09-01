@@ -3,66 +3,54 @@
         {
             "name": "Aben",
             "gender": "male",
-            "meaning": "unknown",
-            "favorite":"true"
+            "meaning": "unknown"
         },{
             "name": "Yabe",
             "gender": "male",
-            "meaning": "unknown",
-            "favorite":"flase"
+            "meaning": "unknown"
         }, {
             "name": "Mhret",
             "gender": "female",
-            "meaning": "Mercy",
-            "favorite":"true"
+            "meaning": "Mercy"
         }, {
             "name": "Tsega",
             "gender": "both",
-            "meaning": "grace",
-            "favorite":"flase"
+            "meaning": "grace"
         }, {
             "name": "Kebede",
             "gender": "both",
-            "meaning": "grace",
-            "favorite":"flase"
+            "meaning": "grace"
         }, {
             "name": "Abebe",
             "gender": "both",
-            "meaning": "grace",
-            "favorite":"flase"
+            "meaning": "grace"
         }, {
             "name": "Lina",
-            "gender": "both",
-            "meaning": "grace",
-            "favorite":"true"
+            "gender": "female",
+            "meaning": "grace"
         }, {
             "name": "Mahlet",
             "gender": "both",
-            "meaning": "grace",
-            "favorite":"true"
+            "meaning": "grace"
         }
     ],
     "favorites":[
         {
             "name": "Aben",
             "gender": "male",
-            "meaning": "unknown",
-            "favorite":"true"
+            "meaning": "unknown"
         }, {
             "name": "Mhret",
             "gender": "female",
-            "meaning": "Mercy",
-            "favorite":"true"
+            "meaning": "Mercy"
         }, {
             "name": "Lina",
             "gender": "both",
-            "meaning": "grace",
-            "favorite":"true"
+            "meaning": "grace"
         }, {
             "name": "Mahlet",
             "gender": "both",
-            "meaning": "grace",
-            "favorite":"true"
+            "meaning": "grace"
         }
     ]
 

@@ -26,7 +26,9 @@ class HomeSearch extends HTMLElement {
 
         shadowRoot.querySelector('#searchBtn').addEventListener('click', e => {
             let q = this.shadowRoot.querySelector('#search').value;
-            // TODO:: append <name-display> with search keyword in attribute
+            let nameNode = document.createElement('name-display');
+            nameNode.setAttribute('search', q);
+            shadowRoot.querySelector('.welcome-box').appendChild(nameNode);
         });
     }
     
