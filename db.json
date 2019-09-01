@@ -41,5 +41,29 @@
             "meaning": "grace",
             "favorite":"true"
         }
+    ],
+    "favorites":[
+        {
+            "name": "Aben",
+            "gender": "male",
+            "meaning": "unknown",
+            "favorite":"true"
+        }, {
+            "name": "Mhret",
+            "gender": "female",
+            "meaning": "Mercy",
+            "favorite":"true"
+        }, {
+            "name": "Lina",
+            "gender": "both",
+            "meaning": "grace",
+            "favorite":"true"
+        }, {
+            "name": "Mahlet",
+            "gender": "both",
+            "meaning": "grace",
+            "favorite":"true"
+        }
     ]
+
 }

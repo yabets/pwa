@@ -36,7 +36,8 @@ class FavOrite extends HTMLElement {
         removeButton.value = "Remove";
         removeButton.type = "Submit";
         
-        fetch(`/names?favorite=true`).then(function(response) {
+        fetch(`/favorites`)
+        .then(function(response) {
             return response.json();
         }).then(function(myJson) {
             return myJson
