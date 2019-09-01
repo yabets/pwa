@@ -26,9 +26,12 @@ class HomeSearch extends HTMLElement {
 
         shadowRoot.querySelector('#searchBtn').addEventListener('click', e => {
             let q = this.shadowRoot.querySelector('#search').value;
-            let nameNode = document.createElement('name-display');
+            let nameNode = this.shadowRoot.querySelector('name-display');
+            if(!nameNode) { 
+                nameNode = document.createElement('name-display');
+                shadowRoot.querySelector('.welcome-box').appendChild(nameNode); 
+            } 
             nameNode.setAttribute('search', q);
-            shadowRoot.querySelector('.welcome-box').appendChild(nameNode);
         });
     }
     
