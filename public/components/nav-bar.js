@@ -15,6 +15,9 @@ class NavBar extends HTMLElement {
 
         let shadowRoot = this.attachShadow({mode:'open'});
         shadowRoot.appendChild(navTemplate.content.cloneNode(true));
+
+        // TODO:: set active class based on selected menu
+        // selected menu will be passed as attribute
     }
 }
 

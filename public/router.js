@@ -3,9 +3,10 @@
     window.onhashchange = function() { 
         let main = document.querySelector("main");
         let nav = document.querySelector("nav-bar");
+        
 
         if(location.hash === "#home") {
-            main.innerHTML = "<name-display></name-display>";
+            main.innerHTML = "<home-search></home-search>";
             // selecting menu
             nav.shadowRoot.querySelector("a[href='#home']").classList.toggle("active");
             nav.shadowRoot.querySelector("a[href='#favorites']").classList.remove("active");
