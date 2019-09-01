@@ -27,6 +27,7 @@ var add = function(favorite){
     tx.oncomplete = function() {
         // All requests have succeeded and the transaction has committed.
         console.log("Completed adding.");
+        return true;
     };
 }
 var remove = function(name){
@@ -38,6 +39,7 @@ var remove = function(name){
     tx.oncomplete = function() {
         // All requests have succeeded and the transaction has committed.
         console.log("Completed removing.");
+        return true;
     };
 }
 

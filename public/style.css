@@ -250,3 +250,7 @@ nav {
   margin-top: 8px;
   font-size: 22px;
 }
+
+.fav-selected {
+  color: gold;
+}

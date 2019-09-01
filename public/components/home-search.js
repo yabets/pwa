@@ -23,13 +23,15 @@ class HomeSearch extends HTMLElement {
         // Attach a shadow root to the element.
         let shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.appendChild(homeTemplate.content.cloneNode(true));
+    }
 
-        shadowRoot.querySelector('#searchBtn').addEventListener('click', e => {
+    connectedCallback() {
+        this.shadowRoot.querySelector('#searchBtn').addEventListener('click', e => {
             let q = this.shadowRoot.querySelector('#search').value;
             let nameNode = this.shadowRoot.querySelector('name-display');
             if(!nameNode) { 
                 nameNode = document.createElement('name-display');
-                shadowRoot.querySelector('.welcome-box').appendChild(nameNode); 
+                this.shadowRoot.querySelector('.welcome-box').appendChild(nameNode); 
             } 
             nameNode.setAttribute('search', q);
         });

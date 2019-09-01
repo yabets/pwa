@@ -1,4 +1,4 @@
-import { isFav, add } from "../database/db.js";
+import { isFav, add, remove } from "../database/db.js";
 
 let nameDisplay = document.createElement('template');
     nameDisplay.innerHTML = `
@@ -11,10 +11,7 @@ let nameDisplay = document.createElement('template');
         `;
 let notFound = document.createElement('template');
 notFound.innerHTML = `<b>Not Found</b>`;
-const getFormatedView = ({name, gender, meaning}) => {
-    // TODO::check if the name is in favorite
-
-    // TODO:: Add favorite icon
+const getFormatedView = ({name, gender}) => {
     const showGenderIcon = (gender) => {
         if(gender === 'unisex'){
             return '<i class="fa fa-male" aria-hidden="true"></i><i class="fa fa-female" aria-hidden="true"></i>'
@@ -38,8 +35,6 @@ const getFormatedView = ({name, gender, meaning}) => {
                 </div>
                 <span class="icon">${showGenderIcon(gender)}</span>
             </div>
-    <!-- TODO:: import font awesome fav icon style on hover to indicate clickable -->
-    <!-- TODO:: import font awesome and show approprate geneder icon -->
     `;
 }
 class NameDisplay extends HTMLElement {
@@ -59,9 +54,7 @@ class NameDisplay extends HTMLElement {
         super();
         // Attach a shadow root to the element.
         let shadowRoot = this.attachShadow({mode: 'open'});
-        shadowRoot.appendChild(nameDisplay.content.cloneNode(true));
-
-        // TODO:: add event listenter to mark as favourite
+        shadowRoot.appendChild(nameDisplay.content.cloneNode(true));      
 
     }
 
@@ -74,7 +67,6 @@ class NameDisplay extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        console.log(name, ' had been changed from', oldValue, ' to ', newValue);
         this.getNameFromAPI();
     }
 
@@ -86,13 +78,45 @@ class NameDisplay extends HTMLElement {
                 .then((response) => response.json())
                 .then((myJson) => {
                     if(myJson.length > 0) {
-                        const view = getFormatedView(myJson[0]);
+                        this.person = myJson[0]; 
+                        isFav(this.person.name).then((resp)=> {
+                            this.person.favorite = resp;
+                            if(resp) {
+                                this.favIcon.classList.add('fav-selected');
+                            } else {
+                                this.favIcon.classList.remove('fav-selected');
+                            }
+                        });
+                        const view = getFormatedView(this.person);
                         this.shadowRoot.querySelector(".box").innerHTML = view;
+                        // TODO:: add event listenter to mark as favourite
+                        this.favIcon = this.shadowRoot.querySelector(".fav");
+                        this.favIcon.addEventListener('click', this.toggleFavorite)
                     } else {
                         this.shadowRoot.querySelector(".box").innerHTML = `<b>Not Found</b>`;
                     }
                 });
-    }
+    };
+
+    toggleFavorite = () => {
+        console.log('toggle fav');
+        let done = false;
+        if(this.person.favorite) {
+            // call remove
+            done = remove(this.person);
+        } else {
+            // call add
+            done = add(this.person.name);
+        }
+        if(done) {
+            this.favIcon.classList.toggle('fav-selected');
+        }
+        
+    };
+
+    disconnectedCallback() {
+        this.favIcon.removeEventListener('click', this.toggleFavorite);
+      }
     
 }
 window.customElements.define('name-display', NameDisplay);
