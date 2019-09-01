@@ -1,3 +1,5 @@
+import { add, remove, allFavorites, isFav } from "../database/db.js";
+
 let favTemplate = document.createElement('template');
 favTemplate.innerHTML = `
     <style>@import"style.css"</style>
@@ -36,12 +38,8 @@ class FavOrite extends HTMLElement {
         removeButton.value = "Remove";
         removeButton.type = "Submit";
         
-        fetch(`/favorites`)
-        .then(function(response) {
-            return response.json();
-        }).then(function(myJson) {
-            return myJson
-        }).then(function(favorites){
+
+        allFavorites().then(function(favorites){
             // adding row to the favorite table
             favorites.forEach(
                 (data) => {
@@ -57,7 +55,9 @@ class FavOrite extends HTMLElement {
                     tableRowClone.appendChild(tableCellClone);
 
                     removeButtonClone.addEventListener("click", (event)=>{
-                        console.log("Remove from favorite clicked...\nName to be removed: ", event.srcElement.parentElement.cells[0].innerHTML);
+                        remove(event.srcElement.parentElement.cells[0].innerHTML);
+                        let row = event.srcElement.parentElement; // selecting row
+                        row.parentElement.removeChild(row); // selecting table and removing child
                     });
                     tableRowClone.appendChild(removeButtonClone)
 
