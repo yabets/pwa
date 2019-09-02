@@ -9,7 +9,7 @@
         changeContent();
    }
 
-   changeContent = () => {
+   const changeContent = () => {
         if(location.hash === "#home") {
             main.innerHTML = "<home-search></home-search>";
         } else if(location.hash === "#favorites") {
