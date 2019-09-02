@@ -2,7 +2,61 @@ import { remove, allFavorites } from "../database/db.js";
 
 let favTemplate = document.createElement('template');
 favTemplate.innerHTML = `
-    <style>@import"style.css"</style>
+    <style>
+        .favorite-box{
+            padding: 10px;
+            width: 85%;
+            background-color: #F7F7F7;
+            margin: 0 auto;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        .favorite-box h1{
+        text-align: center;
+        }
+        .favorite-table{
+            width:300px;
+            height:100%;
+            margin:auto;
+            padding: 30px 0;
+            background:#34495E;
+            color: #fff;
+            border-radius: .4em;
+            border-collapse: collapse;
+        }
+        .favorite-table tr {
+            border-color: white;
+        }
+        .favorite-table td{
+            padding:10px 5px;
+            text-align: center;
+            align-items: center;
+            border-bottom: 1px solid white;
+        }
+        .favorite-table th, td {
+            margin: .2em .2em;
+        }
+        .favorite-table thead td{
+            color: #dd5;
+        }
+        .favorite-table input[type="submit"]{
+            border: 0px;
+            color: #fff;
+            text-shadow: 0 1px rgba(0,0,0,0.1); 
+            background-color:#357ae8;
+            width: 100%;
+            height: 100%;
+            border-radius:6px;
+            border-bottom: solid 1px white;
+        
+        }
+        .favorite-table input[type="submit"]:hover{
+            border: 0px;
+            text-shadow: 0 1px rgba(0,0,0,0.3);
+            background-color:#4d90fe;
+            
+        }
+    </style>
     <div class="favorite-box">
         <h1>Favorite Names</h1>
         <table class="favorite-table">

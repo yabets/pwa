@@ -1,8 +1,65 @@
 let homeTemplate = document.createElement('template');
     homeTemplate.innerHTML = `
         <style>
-            @import"style.css"
-        </style> 
+            .welcome-box {
+                padding: 40px;
+                width: 80%;
+                background-color: #F7F7F7;
+                margin: 0 auto;
+                box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+                overflow: hidden;
+            }
+            .welcome-box input[name="name"]{
+                padding: 6px;
+                margin-top: 8px;
+                font-size: 17px;
+                border: 1px grey solid;
+            
+            }
+            .welcome-box input[name="submit"]{
+                padding: 6px 10px;
+                margin-top: 8px;
+                margin-right: 16px;
+                background: #ddd;
+                font-size: 17px;
+                border: none;
+                cursor: pointer;
+            }
+            
+            .box {
+                border: black solid 1px;
+                border-radius: 5px;
+                width: 250px;
+                padding: 10px;
+                margin: 10px;
+                height: 2.5em;
+            }
+            .col-70 {
+                width: 70%;
+            }
+            .col-30 {
+                widht: 30%;
+            }
+            .row {
+            }
+            .label {
+                font-weight: bold;
+                font-size: 1em;
+            }
+            .value {
+                font-size: 1em;
+            }
+            .icon {
+                font-size: 2em;
+            }
+            .left {
+                float: left;
+            }
+            .right {
+                float: right;
+            }
+    
+        </style>
         <div class="welcome-box">
             <br/>
             <h1>Welcome</h1>

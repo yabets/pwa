@@ -8,10 +8,6 @@ request.onupgradeneeded = function() {
   var store = db.createObjectStore("favorites", {keyPath: "name"});
   store.createIndex("name", "name", {unique: true});
 
-  // Populate with initial data.
-  store.put({name: "abenezer", gender: "male"});
-  store.put({name: "yabets", gender: "male" });
-  store.put({name: "tsega", gender: "unisex"});
 };
 
 request.onsuccess = function() {
@@ -27,7 +23,6 @@ var add = function(favorite){
     tx.oncomplete = function() {
         // All requests have succeeded and the transaction has committed.
         console.log("Completed adding.");
-        return true;
     };
 }
 var remove = function(name){
@@ -39,7 +34,6 @@ var remove = function(name){
     tx.oncomplete = function() {
         // All requests have succeeded and the transaction has committed.
         console.log("Completed removing.");
-        return true;
     };
 }
 

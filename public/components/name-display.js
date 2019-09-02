@@ -4,8 +4,18 @@ let nameDisplay = document.createElement('template');
     nameDisplay.innerHTML = `
         <link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
         <style>
-            @import"style.css"
-        </style> 
+            .fav {
+                color:grey;
+                float:right;
+                margin-left:12px;
+                margin-top: 8px;
+                font-size: 22px;
+            }
+            
+            .fav-selected {
+                color: gold;
+            }
+        </style>
         <div class="box"></div>
         <slot></slot> <!-- slotted content appears here -->
         `;

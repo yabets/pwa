@@ -1,6 +1,51 @@
 let navTemplate = document.createElement('template');
 navTemplate.innerHTML = `
-    <style>@import"style.css"</style>
+    <style>
+        .fav {
+            color:grey;
+            float:right;
+            margin-left:12px;
+            margin-top: 8px;
+            font-size: 22px;
+        }
+        
+        .fav-selected {
+            color: gold;
+        }
+        nav {
+            width: 90%;
+            margin: auto;
+        }
+        nav ul {
+            list-style-type: none;
+            overflow: hidden;
+            background-color: #333;
+        }
+        
+        nav ul li {
+            float: left;
+        }
+        
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        nav ul li a:hover:not(.active) {
+            background-color: #111;
+        }
+        
+        nav {
+            display:block;
+        }
+        
+        .active {
+            background:brown;
+        }
+    </style>
     <nav class=".navigation">
         <ul>
             <li><a href="#home" class="active">Home</a></li>
