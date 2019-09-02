@@ -1,4 +1,4 @@
-import { add, remove, allFavorites, isFav } from "../database/db.js";
+import { remove, allFavorites } from "../database/db.js";
 
 let favTemplate = document.createElement('template');
 favTemplate.innerHTML = `

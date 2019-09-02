@@ -103,10 +103,13 @@ class NameDisplay extends HTMLElement {
         let done = false;
         if(this.person.favorite) {
             // call remove
-            done = remove(this.person);
+            remove(this.person.name);
+            done = !done;
         } else {
             // call add
-            done = add(this.person.name);
+            let toBeAdded = {name:this.person.name.toLowerCase(), gender:this.person.gender};
+            add(toBeAdded);
+            done = !done;
         }
         if(done) {
             this.favIcon.classList.toggle('fav-selected');
