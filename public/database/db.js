@@ -19,22 +19,12 @@ var add = function(favorite){
     var store = tx.objectStore("favorites");
 
     store.put(favorite);
-
-    tx.oncomplete = function() {
-        // All requests have succeeded and the transaction has committed.
-        console.log("Completed adding.");
-    };
 }
 var remove = function(name){
     var tx = db.transaction("favorites", "readwrite");
     var store = tx.objectStore("favorites");
 
-    store.delete(name);
-
-    tx.oncomplete = function() {
-        // All requests have succeeded and the transaction has committed.
-        console.log("Completed removing.");
-    };
+    store.delete(name.toLowerCase());
 }
 
 var isFav = function(name){

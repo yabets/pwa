@@ -25,39 +25,6 @@ let homeTemplate = document.createElement('template');
                 border: none;
                 cursor: pointer;
             }
-            
-            .box {
-                border: black solid 1px;
-                border-radius: 5px;
-                width: 250px;
-                padding: 10px;
-                margin: 10px;
-                height: 2.5em;
-            }
-            .col-70 {
-                width: 70%;
-            }
-            .col-30 {
-                widht: 30%;
-            }
-            .row {
-            }
-            .label {
-                font-weight: bold;
-                font-size: 1em;
-            }
-            .value {
-                font-size: 1em;
-            }
-            .icon {
-                font-size: 2em;
-            }
-            .left {
-                float: left;
-            }
-            .right {
-                float: right;
-            }
     
         </style>
         <div class="welcome-box">

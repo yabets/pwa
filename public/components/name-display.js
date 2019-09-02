@@ -4,6 +4,38 @@ let nameDisplay = document.createElement('template');
     nameDisplay.innerHTML = `
         <link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
         <style>
+            .box {
+                border: black solid 1px;
+                border-radius: 5px;
+                width: 250px;
+                padding: 10px;
+                margin: 10px;
+                height: 2.5em;
+            }
+            .col-70 {
+                width: 70%;
+            }
+            .col-30 {
+                widht: 30%;
+            }
+            .row {
+            }
+            .label {
+                font-weight: bold;
+                font-size: 1em;
+            }
+            .value {
+                font-size: 1em;
+            }
+            .icon {
+                font-size: 2em;
+            }
+            .left {
+                float: left;
+            }
+            .right {
+                float: right;
+            }
             .fav {
                 color:grey;
                 float:right;
@@ -11,7 +43,6 @@ let nameDisplay = document.createElement('template');
                 margin-top: 8px;
                 font-size: 22px;
             }
-            
             .fav-selected {
                 color: gold;
             }
@@ -91,7 +122,7 @@ class NameDisplay extends HTMLElement {
                         this.person = myJson[0]; 
                         isFav(this.person.name).then((resp)=> {
                             this.person.favorite = resp;
-                            if(resp) {
+                            if(resp == true) {
                                 this.favIcon.classList.add('fav-selected');
                             } else {
                                 this.favIcon.classList.remove('fav-selected');
@@ -109,16 +140,17 @@ class NameDisplay extends HTMLElement {
     };
 
     toggleFavorite = () => {
-        console.log('toggle fav');
         let done = false;
         if(this.person.favorite) {
             // call remove
             remove(this.person.name);
+            this.person.favorite = false;
             done = !done;
         } else {
             // call add
             let toBeAdded = {name:this.person.name.toLowerCase(), gender:this.person.gender};
             add(toBeAdded);
+            this.person.favorite = true;
             done = !done;
         }
         if(done) {
